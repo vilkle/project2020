@@ -1,0 +1,41 @@
+
+xianrenzhang2.png
+size: 256,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xfrz_shou4_x
+  rotate: true
+  xy: 121, 17
+  size: 12, 26
+  orig: 12, 26
+  offset: 0, 0
+  index: -1
+xrz_body_x
+  rotate: true
+  xy: 2, 2
+  size: 27, 57
+  orig: 27, 57
+  offset: 0, 0
+  index: -1
+xrz_shou1_x
+  rotate: true
+  xy: 149, 17
+  size: 12, 25
+  orig: 12, 25
+  offset: 0, 0
+  index: -1
+xrz_shou2_x
+  rotate: false
+  xy: 61, 10
+  size: 28, 19
+  orig: 28, 19
+  offset: 0, 0
+  index: -1
+xrz_shou3_x
+  rotate: false
+  xy: 91, 10
+  size: 28, 19
+  orig: 28, 19
+  offset: 0, 0
+  index: -1
