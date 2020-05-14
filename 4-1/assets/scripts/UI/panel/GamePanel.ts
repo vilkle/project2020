@@ -139,9 +139,11 @@ export default class GamePanel extends BaseUI {
             }
         }.bind(this), this, true);
         this.bg.on(cc.Node.EventType.TOUCH_MOVE, function(e) {
-            let posInBg = this.node.convertToNodeSpaceAR(e.currentTouch._point);
+            let pos = e.currentTouch._point
+            GameMsg.getInstance().actionSynchro({type:2, pos: pos})
+            let posInBg = this.node.convertToNodeSpaceAR(pos);
             //round1
-            let posInNode = this.round1.node.convertToNodeSpaceAR(e.currentTouch._point);
+            let posInNode = this.round1.node.convertToNodeSpaceAR(pos);
             let spriteFrame = this.round1.spriteFrame;
             let rect = spriteFrame.getRect();
             let offset = spriteFrame.getOffset();
@@ -286,6 +288,10 @@ export default class GamePanel extends BaseUI {
         }.bind(this), this, true);
 
         this.bg.on(cc.Node.EventType.TOUCH_END, function(e) {
+            if(!this.isAction) {
+                GameMsg.getInstance().actionSynchro({type: 3})
+            }
+
             if(this.isOver == false && this.isOver1 == false) {
                 this.isBreak = true;
                 AudioManager.getInstance().stopAudio(this.runAudioId); 
