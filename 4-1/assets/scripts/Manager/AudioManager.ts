@@ -36,6 +36,7 @@ export class AudioManager
                 cc.error(err);
                 return;
             }
+            console.log('-----path', path)
             let audioID = cc.audioEngine.play(clip, loop?loop:false, volume?volume:1);
             //LogWrap.log('playSound: ', path)
             if(audioIdCbk){

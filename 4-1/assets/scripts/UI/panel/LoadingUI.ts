@@ -6,6 +6,7 @@ import { UIManager } from "../../Manager/UIManager";
 import { NetWork } from "../../Http/NetWork";
 import DataReporting from "../../Data/DataReporting";
 import { TimeManager } from "../../Manager/TimeManager";
+import GameMsg from "../../Data/GameMsg";
 
 const { ccclass, property } = cc._decorator;
 
@@ -31,23 +32,32 @@ export class LoadingUI extends BaseUI {
             if (!this.isLoadStart) {
                 this.isLoadStart = true;
                 NetWork.getInstance().LogJournalReport("ResLoadStart", { curTime: TimeManager.getInstance().getNowFormatDate() });
+
+                //�¿����ϱ�
+                GameMsg.getInstance().resLoadStart();
             }
             this.progressBar.progress = completedCount / totalCount;
             let value = Math.round(completedCount / totalCount * 100);
 
-            DataReporting.getInstance().dispatchEvent('loading', value);
+            // DataReporting.getInstance().dispatchEvent('loading', value);
+            //�¿����ϱ�
+            GameMsg.getInstance().resLoading(value);
+
             this.progressLabel.string = value.toString() + '%';
             let posX = completedCount / totalCount * 609 - 304;
             this.dragonNode.x = posX;
         };
 
-        DataReporting.getInstance().dispatchEvent('load start');
+        // DataReporting.getInstance().dispatchEvent('load start');
 
         let openPanel: UIClass<BaseUI> = ConstValue.IS_TEACHER ? TeacherPanel : GamePanel;
-        UIManager.getInstance().openUI(openPanel, null,0, () => {
+        UIManager.getInstance().openUI(openPanel, 0, () => {
             NetWork.getInstance().LogJournalReport("ResLoadEnd", { curTime: TimeManager.getInstance().getNowFormatDate() });
-            DataReporting.getInstance().dispatchEvent('load end');
-            DataReporting.getInstance().dispatchEvent('start');
+            //�¿����ϱ�
+            GameMsg.getInstance().resLoadEnd();
+
+            // DataReporting.getInstance().dispatchEvent('load end');
+            // DataReporting.getInstance().dispatchEvent('start');
             this.node.active = false;
         }, onProgress);
     }

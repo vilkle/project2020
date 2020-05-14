@@ -4,8 +4,14 @@ import {ConstValue} from "../../Data/ConstValue"
 import { UIManager } from "../../Manager/UIManager";
 import UploadAndReturnPanel from "./UploadAndReturnPanel";
 import {AudioManager} from "../../Manager/AudioManager"
-import DataReporting from "../../Data/DataReporting";
 import {UIHelp} from "../../Utils/UIHelp";
+import ErrorPanel from "./ErrorPanel";
+import GameMsg from "../../Data/GameMsg";
+import { GameMsgType } from "../../Data/GameMsgType";
+import { Tools } from "../../UIComm/Tools";
+import {ReportManager}from "../../Manager/ReportManager";
+import { AnswerResult } from "../../Data/ConstValue";
+import {OverTips} from "../Item/OverTips";
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -44,20 +50,19 @@ export default class GamePanel extends BaseUI {
     private erge : cc.Node = null;
     @property(cc.Node)
     private layout : cc.Node = null;
+    private standardNum: number = 1
     private runAudioId : number = 0;
     private judge : boolean = true;
     private isEnd : number = 0;
-    private eventvalue = {
-        isResult: 1,
-        isLevel: 0,
-        levelData: [
-            {
-                subject: null,
-                answer: null,
-                result: 4
-            }
-        ],
-        result: 4
+    private timeoutArr: number[] = []
+    private gameResult: AnswerResult = AnswerResult.NoAnswer
+    private actionId: number = 0
+    private isAction: boolean = false
+    private archival = {
+        answerdata: null,
+        rightNum: null,
+        totalNum: null,
+        standardNum: this.standardNum
     }
 
     _textureIdMapRenderTexture = {}
@@ -66,21 +71,25 @@ export default class GamePanel extends BaseUI {
     isOver : boolean = false;
     isOver1 : boolean = false;
 
-    start() {
-        this.bg.on(cc.Node.EventType.TOUCH_START, (e)=>{
-            if(this.isEnd != 1) {
-                this.isEnd = 2;
-                this.eventvalue.result = 2;
-                this.eventvalue.levelData[0].result = 2;
-            }
-        });
-
-        DataReporting.getInstance().addEvent('end_game', this.onEndGame.bind(this));
+    onLoad() {
         if(ConstValue.IS_TEACHER) {
-            UIManager.getInstance().openUI(UploadAndReturnPanel);
+            UIManager.getInstance().openUI(UploadAndReturnPanel, 212)
         }else {
-            
+            this.getNet()
         }
+    }
+
+    start() {
+        //监听新课堂发出的消息
+        this.addSDKEventListener()
+        //新课堂上报
+        GameMsg.getInstance().gameStart()
+        //添加上报result数据
+        ReportManager.getInstance().addResult(1)
+        this.standardNum = 3
+        ReportManager.getInstance().setStandardNum(this.standardNum)
+        ReportManager.getInstance().setQuestionInfo(0, '一起动手，挑战下面的关卡吧！')
+
         AudioManager.getInstance().playSound('bgm_wk401');
         this.yige.opacity = 255;
         this.yige.getComponent(sp.Skeleton).setAnimation(0, 'tiao', false);
@@ -89,21 +98,9 @@ export default class GamePanel extends BaseUI {
                 AudioManager.getInstance().playSound('帮我找到出口吧', false);
             }
         });
+        this.layout.active = false
         this.addListenerOnRound1();
         this.initBackground();
-    }
-
-    onEndGame() {
-        //如果已经上报过数据 则不再上报数据
-        if (DataReporting.isRepeatReport && this.eventvalue.result != 1) {
-            DataReporting.getInstance().dispatchEvent('addLog', {
-                eventType: 'clickSubmit',
-                eventValue: JSON.stringify(this.eventvalue)
-            });
-            DataReporting.isRepeatReport = false;
-        }
-        //eventValue  0为未答题   1为答对了    2为答错了或未完成
-        DataReporting.getInstance().dispatchEvent('end_finished', { eventType: 'activity', eventValue: this.isEnd });
     }
 
     initBackground() {
@@ -113,18 +110,26 @@ export default class GamePanel extends BaseUI {
 
     addListenerOnRound1() {
         this.bg.on(cc.Node.EventType.TOUCH_START, function(e) {
-            if(this.isEnd != 1) {
-                this.isEnd = 2;
-                this.eventvalue.result = 2;
-                this.eventvalue.levelData[0].result = 2;
+            let pos = e.currentTouch._point
+            console.log('-------------touchstart')
+            this.gameResult = AnswerResult.AnswerHalf
+            if(!ReportManager.getInstance().isStart()) {
+                ReportManager.getInstance().levelStart(this.isBreak)
             }
-            if(this.start1.getBoundingBox().contains(this.node.convertToNodeSpaceAR(e.currentTouch._point))) {
+            ReportManager.getInstance().touchStart()
+            ReportManager.getInstance().setAnswerNum(1)
+
+            if(!this.isAction) {
+                GameMsg.getInstance().actionSynchro({type: 1, pos: pos})
+            }
+
+            if(this.start1.getBoundingBox().contains(this.node.convertToNodeSpaceAR(pos))) {
                 this.isBreak = false;
-            }else if(this.start2.getBoundingBox().contains(this.node.convertToNodeSpaceAR(e.currentTouch._point))) {
+            }else if(this.start2.getBoundingBox().contains(this.node.convertToNodeSpaceAR(pos))) {
                 this.isBreak1 = false;
             }
-            if(this.yige.getBoundingBox().contains(this.bg.convertToNodeSpaceAR(e.currentTouch._point))) {
-                if(!this.start2.getBoundingBox().contains(this.node.convertToNodeSpaceAR(e.currentTouch._point))) {
+            if(this.yige.getBoundingBox().contains(this.bg.convertToNodeSpaceAR(pos))) {
+                if(!this.start2.getBoundingBox().contains(this.node.convertToNodeSpaceAR(pos))) {
                     if(!this.isOver1) {
                         AudioManager.getInstance().stopAll();
                         AudioManager.getInstance().playSound('帮我找到出口吧', false);
@@ -195,8 +200,8 @@ export default class GamePanel extends BaseUI {
                             this.yige.setPosition(posInBg);
                         }
                         if(this.end1.getBoundingBox().contains(this.node.convertToNodeSpaceAR(e.currentTouch._point))) {
-                            this.isEnd = 2;
-                            this.eventvalue.result = 2;
+                            // this.isEnd = 2;
+                            // this.eventvalue.result = 2;
                             AudioManager.getInstance().stopAll();
                             AudioManager.getInstance().playSound('不是这条路', false);
                             this.yige.setPosition(cc.v2(28, -132));
@@ -249,8 +254,7 @@ export default class GamePanel extends BaseUI {
                             this.mask1._graphics.clear();
                         }
                     }
-                }
-                else {
+                }else {
                     if(!this.isBreak1) {
                         this.commonFunc(e,this.mask1);
                         if(!this.isOver1) {
@@ -267,14 +271,14 @@ export default class GamePanel extends BaseUI {
                             this.runAudioId = 0;
                             AudioManager.getInstance().playSound('sfx_winnerrun', false,1,(id)=>{},()=>{AudioManager.getInstance().playSound('谢谢你帮我找到出口',false, 1,(id)=>{},()=>{this.success();});});
                             this.yige.getComponent(sp.Skeleton).setAnimation(0, 'daiji', false);
-                            this.eventvalue.result = 1;
-                            this.isEnd = 1;
-                            this.eventvalue.levelData[0].result = 1;
-                            cc.log('----eventvalue', this.eventvalue);
-                            DataReporting.getInstance().dispatchEvent('addLog', {
-                                eventType: 'clickSubmit',
-                                eventValue: JSON.stringify(this.eventvalue)
-                            });
+                            // this.eventvalue.result = 1;
+                            // this.isEnd = 1;
+                            // this.eventvalue.levelData[0].result = 1;
+                            // cc.log('----eventvalue', this.eventvalue);
+                            // DataReporting.getInstance().dispatchEvent('addLog', {
+                            //     eventType: 'clickSubmit',
+                            //     eventValue: JSON.stringify(this.eventvalue)
+                            // });
                         }
                     }
             }
@@ -324,9 +328,10 @@ export default class GamePanel extends BaseUI {
         this.layout.on(cc.Node.EventType.TOUCH_START, (e)=>{
             e.stopPropagation();
         });
-        UIHelp.showOverTips(2,'闯关成功，棒棒的', function(){
-            AudioManager.getInstance().playSound('闯关成功，棒棒的', false);
-        }.bind(this), function(){}.bind(this));
+        UIHelp.showOverTip(2,'', '', null, null, '闯关成功')
+        // UIHelp.showOverTips(2,'闯关成功，棒棒的', function(){
+        //     AudioManager.getInstance().playSound('闯关成功，棒棒的', false);
+        // }.bind(this), function(){}.bind(this));
     }
 
     onDestroy() {
@@ -340,19 +345,115 @@ export default class GamePanel extends BaseUI {
 
     }
 
+    private onInit() {
+        this.actionId = 0
+        this.archival.answerdata = null
+        this.archival.rightNum = null
+        this.archival.totalNum = null
+        this.isOver = false
+        ReportManager.getInstance().answerReset()
+        UIManager.getInstance().closeUI(OverTips)
+        this.layout.active = true
+    }
+
+    private onRecovery(data: any) {
+        this.isBreak = true
+        this.isOver = false
+        let answerdata = data.answerdata
+        let level = data.level
+        let pos = data.pos
+        let angle = data.angle
+        let rightNum = data.rightNum
+        let totalNum = data.totalNum
+    
+        ReportManager.getInstance().setLevel(level)
+        ReportManager.getInstance().setAnswerData(answerdata)
+        ReportManager.getInstance().setRightNum(rightNum)
+        ReportManager.getInstance().setTotalNum(totalNum)
+    }
+
+    addSDKEventListener() {
+        GameMsg.getInstance().addEvent(GameMsgType.ACTION_SYNC_RECEIVE, this.onSDKMsgActionReceived.bind(this));
+        GameMsg.getInstance().addEvent(GameMsgType.DISABLED, this.onSDKMsgDisabledReceived.bind(this));
+        //GameMsg.getInstance().addEvent(GameMsgType.DATA_RECOVERY, this.onSDKMsgRecoveryReceived.bind(this));
+        GameMsg.getInstance().addEvent(GameMsgType.STOP, this.onSDKMsgStopReceived.bind(this));
+        GameMsg.getInstance().addEvent(GameMsgType.INIT, this.onSDKMsgInitReceived.bind(this));
+    }
+
+     //动作同步消息监听
+     onSDKMsgActionReceived(data: any) {
+        this.isAction = true
+        data = eval(data).action
+        if (data.type == 1) {
+            
+        }else if(data.type == 2) {
+            
+        }else if(data.type == 3) {
+            
+        }else if(data.type == 4) {
+            
+        }else if(data.type == 5) {
+            
+        }else if(data.type == 6) {
+            
+        }else if(data.type == 7) {
+            
+        }
+    }
+    //禁用消息监听
+    onSDKMsgDisabledReceived() {
+        //交互游戏暂不处理此消息
+    }
+    //数据恢复消息监听
+    onSDKMsgRecoveryReceived(data: any) {
+        data = eval(data)
+        this.onRecovery(data.data);
+    }
+    //游戏结束消息监听
+    onSDKMsgStopReceived() {
+        if (!this.isOver) {
+            if (!ReportManager.getInstance().isStart()) {
+                ReportManager.getInstance().addLevel()
+            }
+            ReportManager.getInstance().gameOver(this.gameResult)
+            //新课堂上报
+            GameMsg.getInstance().gameOver(ReportManager.getInstance().getAnswerData());
+        }
+
+        GameMsg.getInstance().finished();
+    }
+    //初始化消息监听
+    onSDKMsgInitReceived() {
+        this.onInit();
+    }
+
     getNet() {
-        NetWork.getInstance().httpRequest(NetWork.GET_QUESTION + "?courseware_id=" + NetWork.courseware_id, "GET", "application/json;charset=utf-8", function (err, response) {
+        NetWork.getInstance().httpRequest(NetWork.GET_QUESTION + "?courseware_id=" + NetWork.coursewareId, "GET", "application/json;charset=utf-8", function (err, response) {
+            console.log("消息返回" + response);
             if (!err) {
-                let response_data = response;
-                if (Array.isArray(response_data.data)) {
+                if (Array.isArray(response.data)) {
+                    // callback()
+                    UIManager.getInstance().openUI(ErrorPanel, 1000, () => {
+                        (UIManager.getInstance().getUI(ErrorPanel) as ErrorPanel).setPanel(
+                            "CoursewareKey错误,请联系客服！",
+                            "", "", "确定");
+                    });
                     return;
                 }
-                let content = JSON.parse(response_data.data.courseware_content);
+                let content = JSON.parse(response.data.courseware_content);
                 if (content != null) {
-                    this.setPanel();
+                    if (content.CoursewareKey == ConstValue.CoursewareKey) {
+                        // cc.log("拉取到数据：")
+                        // cc.log(content);
+                    } else {
+                        UIManager.getInstance().openUI(ErrorPanel, 1000, () => {
+                            (UIManager.getInstance().getUI(ErrorPanel) as ErrorPanel).setPanel(
+                                "CoursewareKey错误,请联系客服！",
+                                "", "", "确定");
+                        });
+                        return;
+                    }
                 }
-            } else {
-                this.setPanel();
             }
         }.bind(this), null);
     }

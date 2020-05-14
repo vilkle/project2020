@@ -258,15 +258,11 @@
             </div>
         </div>
     </div>
-    <script src="src/settings.js" charset="utf-8"></script>
-    <script src="main.js" charset="utf-8"></script>
 
     <script>
         this.theRequest = new Object();
         var url = location.search; //获取url中"?"符后的字串
 
-        var isOwcr = location.protocol != 'owcr:' && location.protocol != 'file:';//是否非预加载
-        var protocol = isOwcr ? '//' : 'https://';
         if (url.indexOf("?") != -1) {
             var str = url.substr(1);
             var strs = str.split("&");
@@ -274,20 +270,20 @@
                 this.theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
             }
         }
-
-        var isOnline = 0;
-        if (this.theRequest["isOnline"]) {
-            isOnline = this.theRequest["isOnline"];
-        } else {
-            if (isOwcr) {//非预加载的情况
-                isOnline = (location.host.indexOf('localhost') < 0 && location.host.indexOf('ceshi') < 0) ? 1 : 0;
-            }
-        }
+        var bPreload = this.theRequest["bPreload"];//true为cdn   false为预加载
+        var isOnline = this.theRequest["env"] == 'online' ? true : false;//判断是线上环境还是测试环境。
         window['isOnline'] = isOnline;
-
-        var domainName = isOnline ? 'courseware-vod.haibian.com' : 'ceshi-static.haibian.com';
-        var src = protocol + domainName + '/courseware/static/sdk/courseware-v1.0.0-alpha.js';
+        var src = bPreload ? "https://static.speiyou.com/_cdn_/game-msg/1.1.8/game-msg.min.js" : './game-msg.min.js'
         document.write('<script src="' + src + '"><\/script>')
+    </script>
+
+    <script src="src/settings.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+    <script>
+        //监听SDK传来的重载消息
+        gameMsg.on_client_event('reload', data => {
+            location.reload();
+        })  
     </script>
 
     <script type="text/javascript">
@@ -360,6 +356,7 @@
                     return currentdate;
                 }
 
+                //上报日志信息给server
                 var upLog = function (eventName, isError = false, log = "") {
                     var img = new Image();
                     var data = new Object();
@@ -368,18 +365,28 @@
                         data.ErrorLog = log;
                     }
                     data.curTime = getNowFormatDate();
-                    data.CoursewareName = "4-1";
+                    data.CoursewareName = "zhuibudaemo_169_machao";
 
-                    img.src = (window['isOnline'] == 1 ? 'https://logserver.haibian.com/statistical/?type=7&' : 'https://ceshi-statistical.haibian.com/?type=7&') +
-                        'course_id=' + theRequest["id"] +
-                        "&chapter_id=" + theRequest["chapter_id"] +
-                        "&user_id=" + theRequest["user_id"] +
-                        "&subject=" + theRequest["subject"] +
+                    img.src = (window['isOnline'] ? 'https://logserver.haibian.com/statistical/?type=7&' : 'https://ceshi-statistical.haibian.com/?type=7&') +
+                        'coursewareId=' + theRequest["coursewareId"] +
+                        "&chapterId=" + theRequest["chapterId"] +
+                        "&userId=" + theRequest["userId"] +
+                        "&bLive=" + theRequest["bLive"] +
+                        "&bPreload=" + theRequest["bPreload"] +
+                        "&env=" + theRequest["env"] +
+                        "&app=" + theRequest["app"] +
+                        "&platform=" + theRequest["platform"] +
+                        "&channel=" + theRequest["channel"] +
+                        "&browser=" + theRequest["browser"] +
+                        "&appVersion=" + theRequest["appVersion"] +
                         "&event=" + eventName +
                         "&identity=1" +
                         "&extra=" + JSON.stringify(data)
                 }
                 upLog("engineLoadStart");
+                //新课堂上报事件
+                gameMsg.engine_load_start('cocos_creator', '2.2.0')
+
                 //引擎加载
                 var splash = document.getElementById('splash');
                 splash.style.display = 'block';
@@ -390,6 +397,9 @@
 
                 var engineLoaded = function () {
                     upLog("engineLoadEnd");
+                    //新课堂上报事件
+                    gameMsg.engine_load_complete()
+
                     document.body.removeChild(cocos2d);
                     cocos2d.removeEventListener('load', engineLoaded, false);
                     window.boot();
