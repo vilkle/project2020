@@ -1,0 +1,83 @@
+
+xianrenzhang.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xrz_body
+  rotate: true
+  xy: 2, 18
+  size: 44, 91
+  orig: 44, 91
+  offset: 0, 0
+  index: -1
+xrz_eye_1
+  rotate: false
+  xy: 2, 2
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+xrz_eye_4
+  rotate: false
+  xy: 2, 2
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+xrz_eye_2
+  rotate: false
+  xy: 189, 35
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+xrz_eye_5
+  rotate: false
+  xy: 189, 35
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+xrz_eye_3
+  rotate: false
+  xy: 238, 57
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+xrz_eye_6
+  rotate: false
+  xy: 238, 57
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+xrz_shou_1
+  rotate: true
+  xy: 189, 43
+  size: 19, 47
+  orig: 19, 47
+  offset: 0, 0
+  index: -1
+xrz_shou_2
+  rotate: false
+  xy: 95, 32
+  size: 45, 30
+  orig: 45, 30
+  offset: 0, 0
+  index: -1
+xrz_shou_3
+  rotate: false
+  xy: 142, 32
+  size: 45, 30
+  orig: 45, 30
+  offset: 0, 0
+  index: -1
+xrz_shou_4
+  rotate: true
+  xy: 95, 11
+  size: 19, 41
+  orig: 19, 41
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,111 @@
+
+luotuo_ren.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+luotuo_body
+  rotate: false
+  xy: 2, 18
+  size: 136, 108
+  orig: 136, 108
+  offset: 0, 0
+  index: -1
+luotuo_sheng
+  rotate: true
+  xy: 423, 73
+  size: 53, 87
+  orig: 53, 87
+  offset: 0, 0
+  index: -1
+luotuo_tui1
+  rotate: true
+  xy: 271, 84
+  size: 20, 58
+  orig: 20, 58
+  offset: 0, 0
+  index: -1
+luotuo_tui2
+  rotate: true
+  xy: 196, 28
+  size: 20, 52
+  orig: 20, 52
+  offset: 0, 0
+  index: -1
+luotuo_ying
+  rotate: false
+  xy: 271, 106
+  size: 150, 20
+  orig: 150, 20
+  offset: 0, 0
+  index: -1
+ren_body
+  rotate: true
+  xy: 140, 72
+  size: 54, 129
+  orig: 54, 129
+  offset: 0, 0
+  index: -1
+ren_shou1
+  rotate: true
+  xy: 140, 25
+  size: 23, 54
+  orig: 23, 54
+  offset: 0, 0
+  index: -1
+ren_shou2
+  rotate: true
+  xy: 331, 85
+  size: 19, 55
+  orig: 19, 55
+  offset: 0, 0
+  index: -1
+ren_tui1
+  rotate: true
+  xy: 140, 2
+  size: 21, 28
+  orig: 21, 28
+  offset: 0, 0
+  index: -1
+ren_tui2
+  rotate: true
+  xy: 170, 2
+  size: 21, 28
+  orig: 21, 28
+  offset: 0, 0
+  index: -1
+ren_yan1
+  rotate: false
+  xy: 388, 92
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+ren_yan2
+  rotate: false
+  xy: 388, 92
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+ren_yiba
+  rotate: true
+  xy: 271, 42
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1
+ren_ying
+  rotate: false
+  xy: 140, 50
+  size: 119, 20
+  orig: 119, 20
+  offset: 0, 0
+  index: -1
+ren_zui
+  rotate: false
+  xy: 2, 12
+  size: 6, 4
+  orig: 6, 4
+  offset: 0, 0
+  index: -1
