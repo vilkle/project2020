@@ -1,9 +1,9 @@
 import { BaseUI } from "../BaseUI";
 import { NetWork } from "../../Http/NetWork";
-import {ConstValue} from "../../Data/ConstValue"
+import {ConstValue} from "../../Data/ConstValue";
 import { UIManager } from "../../Manager/UIManager";
 import UploadAndReturnPanel from "./UploadAndReturnPanel";
-import {AudioManager} from "../../Manager/AudioManager"
+import {AudioManager} from "../../Manager/AudioManager";
 import {UIHelp} from "../../Utils/UIHelp";
 import ErrorPanel from "./ErrorPanel";
 import GameMsg from "../../Data/GameMsg";
@@ -472,7 +472,7 @@ export default class GamePanel extends BaseUI {
             spd.runAction(cc.sequence(cc.scaleTo(0.2, scale2, scale2), cc.scaleTo(0.2, scale0,scale0)))
         }
     }
-
+          
     playAudio(level: number, rightNum: number) {
         if(this.isPoint || rightNum > 3) {
             return
