@@ -1,0 +1,97 @@
+
+gl.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gl_body
+  rotate: false
+  xy: 2, 5
+  size: 125, 121
+  orig: 125, 121
+  offset: 0, 0
+  index: -1
+gl_eye01
+  rotate: true
+  xy: 194, 7
+  size: 34, 13
+  orig: 34, 13
+  offset: 0, 0
+  index: -1
+gl_eye01_N
+  rotate: false
+  xy: 183, 43
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+gl_eye02
+  rotate: true
+  xy: 242, 68
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+gl_eye02_N
+  rotate: true
+  xy: 159, 4
+  size: 29, 33
+  orig: 29, 33
+  offset: 0, 0
+  index: -1
+gl_meim01
+  rotate: false
+  xy: 217, 40
+  size: 21, 17
+  orig: 21, 17
+  offset: 0, 0
+  index: -1
+gl_meimao02
+  rotate: false
+  xy: 217, 59
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+gl_mouth
+  rotate: false
+  xy: 183, 78
+  size: 57, 23
+  orig: 57, 23
+  offset: 0, 0
+  index: -1
+gl_mouth_N
+  rotate: false
+  xy: 183, 103
+  size: 64, 23
+  orig: 64, 23
+  offset: 0, 0
+  index: -1
+gl_saih01
+  rotate: true
+  xy: 209, 19
+  size: 22, 6
+  orig: 22, 6
+  offset: 0, 0
+  index: -1
+gl_saih02
+  rotate: false
+  xy: 217, 32
+  size: 22, 6
+  orig: 22, 6
+  offset: 0, 0
+  index: -1
+yanl
+  rotate: false
+  xy: 129, 35
+  size: 52, 91
+  orig: 52, 91
+  offset: 0, 0
+  index: -1
+yanlei_gg
+  rotate: false
+  xy: 129, 2
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1

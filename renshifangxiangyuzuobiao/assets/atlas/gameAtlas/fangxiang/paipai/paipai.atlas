@@ -1,0 +1,76 @@
+
+paipai.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 808, 386
+  size: 90, 134
+  orig: 90, 134
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 594, 247
+  size: 91, 134
+  orig: 91, 134
+  offset: 0, 0
+  index: -1
+body02
+  rotate: false
+  xy: 2, 134
+  size: 308, 342
+  orig: 308, 342
+  offset: 0, 0
+  index: -1
+ear_l
+  rotate: false
+  xy: 2, 47
+  size: 272, 85
+  orig: 272, 85
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 312, 138
+  size: 186, 71
+  orig: 186, 71
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 594, 383
+  size: 212, 93
+  orig: 212, 93
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 500, 111
+  size: 94, 98
+  orig: 94, 98
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: false
+  xy: 687, 283
+  size: 95, 98
+  orig: 95, 98
+  offset: 0, 0
+  index: -1
+mouse
+  rotate: false
+  xy: 2, 2
+  size: 101, 43
+  orig: 101, 43
+  offset: 0, 0
+  index: -1
+weiqun
+  rotate: false
+  xy: 312, 211
+  size: 280, 265
+  orig: 280, 265
+  offset: 0, 0
+  index: -1

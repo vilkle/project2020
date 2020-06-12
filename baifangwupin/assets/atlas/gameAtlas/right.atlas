@@ -1,0 +1,55 @@
+
+right.png
+size: 1170,694
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+circle_01
+  rotate: false
+  xy: 2, 2
+  size: 690, 690
+  orig: 690, 690
+  offset: 0, 0
+  index: -1
+circle_02
+  rotate: false
+  xy: 694, 218
+  size: 474, 474
+  orig: 474, 474
+  offset: 0, 0
+  index: -1
+circle_03
+  rotate: false
+  xy: 694, 59
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+circle_04
+  rotate: false
+  xy: 853, 171
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+circle_05
+  rotate: false
+  xy: 694, 10
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+circle_06
+  rotate: false
+  xy: 782, 147
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+circle_07
+  rotate: false
+  xy: 694, 130
+  size: 86, 86
+  orig: 86, 86
+  offset: 0, 0
+  index: -1

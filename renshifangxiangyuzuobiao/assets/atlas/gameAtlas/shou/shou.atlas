@@ -1,0 +1,13 @@
+
+shou.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guide_hand
+  rotate: false
+  xy: 2, 2
+  size: 220, 192
+  orig: 220, 192
+  offset: 0, 0
+  index: -1

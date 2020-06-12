@@ -18,14 +18,18 @@ export default class TeacherPanel extends BaseUI {
 
     @property(cc.Button) btnCheck: cc.Button = null;
     @property(cc.Button) btnPreview: cc.Button = null;
+    @property(cc.Node) loadingNode: cc.Node = null
 
     onLoad () {
+        cc.loader.loadRes('atlas/loading_01', sp.SkeletonData, null)
+        ListenerManager.getInstance().add(ListenerType.CloseLoading, this, this.onCloseLoading)
         this.getNet();
     }
 
     onDestroy() {
         
     }
+    
     start() {
 
     }
@@ -37,9 +41,14 @@ export default class TeacherPanel extends BaseUI {
 
     //预览
     onBtnPreviewlicked() {
+        this.loadingNode.active = true
         UIManager.getInstance().showUI(GamePanel, () => {
                 ListenerManager.getInstance().trigger(ListenerType.OnEditStateSwitching, { state: 1 });
         });
+    }
+
+    onCloseLoading() {
+        this.loadingNode.active = false
     }
 
 

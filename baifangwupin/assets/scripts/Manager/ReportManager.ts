@@ -135,20 +135,24 @@ export class ReportManager
             percentage = Math.round((this.rightNum / this.totalNum * 100))
             console.log('---------rightNum', this.rightNum)
             console.log('---------totalNum', this.totalNum)
+            console.log('---------standardNum', this.standardNum)
             //percentage = 100
         }
         progress = (this.rightNum / this.standardNum * 100).toFixed(2)
-        this.answerdata.gameOver.percentage = percentage
+        
         if(parseFloat(progress) == 0.00) {
             if(this.answerdata.result[0].answer_res == AnswerResult.NoAnswer) {
                 this.answerdata.gameOver.answer_all_state = AnswerResult.NoAnswer
             }else if(this.answerdata.result[0].answer_res == AnswerResult.AnswerHalf) {
                 this.answerdata.gameOver.answer_all_state = AnswerResult.AnswerHalf
             }
+            this.answerdata.gameOver.percentage = 0
         }else if(parseFloat(progress) == 100.00) {
             this.answerdata.gameOver.answer_all_state = AnswerResult.AnswerRight
+            this.answerdata.gameOver.percentage = percentage
         }else {
             this.answerdata.gameOver.answer_all_state = AnswerResult.AnswerHalf
+            this.answerdata.gameOver.percentage = 0
         }
         let time = 0
         for (const key in this.answerdata.result) {

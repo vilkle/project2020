@@ -201,7 +201,7 @@ export class NetWork {
                 "&appVersion=" + this.GetRequest()["appVersion"] +
                 "&event=" + errorType +
                 "&identity=1" +
-                "&extra=" + JSON.stringify({ url: location, CoursewareKey: ConstValue.CoursewareKey, empty: this.GetRequest()["empty"], CoursewareName: 'zhuibudaemo_169_machao', data: data });
+                "&extra=" + JSON.stringify({ url: location, CoursewareKey: ConstValue.CoursewareKey, empty: this.GetRequest()["empty"], CoursewareName: 'baifangwupin169_machao', data: data });
         }
     }
 }

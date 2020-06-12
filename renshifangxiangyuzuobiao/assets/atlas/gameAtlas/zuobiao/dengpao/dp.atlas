@@ -1,0 +1,41 @@
+
+dp.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dp_body
+  rotate: true
+  xy: 2, 13
+  size: 110, 160
+  orig: 110, 160
+  offset: 0, 0
+  index: -1
+dp_eye_N
+  rotate: false
+  xy: 164, 66
+  size: 59, 57
+  orig: 59, 57
+  offset: 0, 0
+  index: -1
+dp_mouth_N
+  rotate: false
+  xy: 2, 2
+  size: 48, 9
+  orig: 48, 9
+  offset: 0, 0
+  index: -1
+dp_saih01
+  rotate: false
+  xy: 164, 55
+  size: 21, 9
+  orig: 21, 9
+  offset: 0, 0
+  index: -1
+dp_saih02
+  rotate: false
+  xy: 164, 55
+  size: 21, 9
+  orig: 21, 9
+  offset: 0, 0
+  index: -1

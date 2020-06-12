@@ -1,0 +1,62 @@
+
+sj.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sj_body
+  rotate: false
+  xy: 2, 69
+  size: 156, 138
+  orig: 156, 138
+  offset: 0, 0
+  index: -1
+sj_eye01
+  rotate: false
+  xy: 2, 37
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+sj_eye01_N
+  rotate: false
+  xy: 160, 176
+  size: 29, 31
+  orig: 29, 31
+  offset: 0, 0
+  index: -1
+sj_eye02_N
+  rotate: false
+  xy: 160, 176
+  size: 29, 31
+  orig: 29, 31
+  offset: 0, 0
+  index: -1
+sj_eye02
+  rotate: true
+  xy: 2, 2
+  size: 33, 14
+  orig: 33, 14
+  offset: 0, 0
+  index: -1
+sj_meimao01
+  rotate: false
+  xy: 160, 159
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+sj_meimao02
+  rotate: false
+  xy: 191, 196
+  size: 19, 11
+  orig: 19, 11
+  offset: 0, 0
+  index: -1
+sj_mouth
+  rotate: false
+  xy: 34, 56
+  size: 27, 11
+  orig: 27, 11
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,146 @@
+
+xiaou_f.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R
+  rotate: false
+  xy: 1482, 335
+  size: 187, 175
+  orig: 187, 175
+  offset: 0, 0
+  index: -1
+ball
+  rotate: false
+  xy: 439, 2
+  size: 170, 173
+  orig: 170, 173
+  offset: 0, 0
+  index: -1
+ball_in
+  rotate: false
+  xy: 611, 38
+  size: 135, 137
+  orig: 135, 137
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1215, 378
+  size: 132, 265
+  orig: 132, 265
+  offset: 0, 0
+  index: -1
+bulingbuling
+  rotate: true
+  xy: 611, 9
+  size: 27, 67
+  orig: 27, 67
+  offset: 0, 0
+  index: -1
+ear_L
+  rotate: true
+  xy: 793, 178
+  size: 113, 185
+  orig: 113, 185
+  offset: 0, 0
+  index: -1
+ear_R
+  rotate: true
+  xy: 1671, 398
+  size: 112, 185
+  orig: 112, 185
+  offset: 0, 0
+  index: -1
+eyes_L
+  rotate: true
+  xy: 1085, 241
+  size: 50, 122
+  orig: 50, 122
+  offset: 0, 0
+  index: -1
+eyes_R
+  rotate: true
+  xy: 1671, 343
+  size: 53, 120
+  orig: 53, 120
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 439, 177
+  size: 352, 333
+  orig: 352, 333
+  offset: 0, 0
+  index: -1
+foot_R
+  rotate: false
+  xy: 132, 23
+  size: 85, 50
+  orig: 85, 50
+  offset: 0, 0
+  index: -1
+gaoguang
+  rotate: false
+  xy: 793, 293
+  size: 420, 217
+  orig: 420, 217
+  offset: 0, 0
+  index: -1
+hand_L
+  rotate: false
+  xy: 1085, 159
+  size: 92, 80
+  orig: 92, 80
+  offset: 0, 0
+  index: -1
+hand_R
+  rotate: false
+  xy: 1953, 430
+  size: 93, 80
+  orig: 93, 80
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 75
+  size: 435, 435
+  orig: 435, 435
+  offset: 0, 0
+  index: -1
+heart
+  rotate: false
+  xy: 1345, 301
+  size: 95, 75
+  orig: 95, 75
+  offset: 0, 0
+  index: -1
+jijiao_L
+  rotate: false
+  xy: 980, 186
+  size: 103, 105
+  orig: 103, 105
+  offset: 0, 0
+  index: -1
+jijiao_R
+  rotate: false
+  xy: 1858, 415
+  size: 93, 95
+  orig: 93, 95
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 2, 8
+  size: 65, 128
+  orig: 65, 128
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 1215, 311
+  size: 65, 128
+  orig: 65, 128
+  offset: 0, 0
+  index: -1

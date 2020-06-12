@@ -1,0 +1,27 @@
+
+dy.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dy_body
+  rotate: false
+  xy: 2, 91
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+dy_eye_N
+  rotate: false
+  xy: 2, 2
+  size: 97, 87
+  orig: 97, 87
+  offset: 0, 0
+  index: -1
+dy_mouth_N
+  rotate: false
+  xy: 134, 207
+  size: 28, 14
+  orig: 28, 14
+  offset: 0, 0
+  index: -1

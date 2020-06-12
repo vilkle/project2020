@@ -1,0 +1,111 @@
+
+neo_01.png
+size: 628,203
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_l_01
+  rotate: true
+  xy: 279, 7
+  size: 17, 38
+  orig: 17, 38
+  offset: 0, 0
+  index: -1
+arm_r_01
+  rotate: false
+  xy: 406, 8
+  size: 32, 45
+  orig: 32, 45
+  offset: 0, 0
+  index: -1
+bag_01
+  rotate: true
+  xy: 541, 2
+  size: 62, 85
+  orig: 62, 85
+  offset: 0, 0
+  index: -1
+body_01
+  rotate: false
+  xy: 554, 111
+  size: 72, 90
+  orig: 72, 90
+  offset: 0, 0
+  index: -1
+earphone_01
+  rotate: true
+  xy: 2, 6
+  size: 195, 121
+  orig: 195, 121
+  offset: 0, 0
+  index: -1
+eye_01
+  rotate: true
+  xy: 125, 2
+  size: 8, 18
+  orig: 8, 18
+  offset: 0, 0
+  index: -1
+eye_02
+  rotate: true
+  xy: 317, 33
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+fire_01
+  rotate: true
+  xy: 125, 12
+  size: 40, 85
+  orig: 40, 85
+  offset: 0, 0
+  index: -1
+glass_01
+  rotate: false
+  xy: 212, 26
+  size: 103, 26
+  orig: 103, 26
+  offset: 0, 0
+  index: -1
+hair_01
+  rotate: false
+  xy: 440, 9
+  size: 99, 55
+  orig: 99, 55
+  offset: 0, 0
+  index: -1
+head_01
+  rotate: false
+  xy: 424, 66
+  size: 128, 135
+  orig: 128, 135
+  offset: 0, 0
+  index: -1
+helmet_01
+  rotate: false
+  xy: 274, 55
+  size: 148, 146
+  orig: 148, 146
+  offset: 0, 0
+  index: -1
+helmet_02
+  rotate: false
+  xy: 125, 54
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+mouth_01
+  rotate: false
+  xy: 333, 17
+  size: 71, 36
+  orig: 71, 36
+  offset: 0, 0
+  index: -1
+neck_01
+  rotate: false
+  xy: 212, 5
+  size: 65, 19
+  orig: 65, 19
+  offset: 0, 0
+  index: -1

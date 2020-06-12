@@ -1,0 +1,146 @@
+
+yezishu.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bashou
+  rotate: false
+  xy: 1438, 77
+  size: 59, 49
+  orig: 59, 49
+  offset: 0, 0
+  index: -1
+changzi
+  rotate: true
+  xy: 1309, 54
+  size: 20, 43
+  orig: 20, 43
+  offset: 0, 0
+  index: -1
+chengqiang
+  rotate: false
+  xy: 1205, 48
+  size: 102, 78
+  orig: 102, 78
+  offset: 0, 0
+  index: -1
+glass01
+  rotate: false
+  xy: 1499, 98
+  size: 40, 28
+  orig: 40, 28
+  offset: 0, 0
+  index: -1
+glass02
+  rotate: false
+  xy: 102, 4
+  size: 40, 28
+  orig: 40, 28
+  offset: 0, 0
+  index: -1
+glass03
+  rotate: false
+  xy: 1541, 98
+  size: 40, 28
+  orig: 40, 28
+  offset: 0, 0
+  index: -1
+qigan
+  rotate: true
+  xy: 462, 2
+  size: 5, 61
+  orig: 5, 61
+  offset: 0, 0
+  index: -1
+qizhi
+  rotate: true
+  xy: 74, 2
+  size: 30, 26
+  orig: 30, 26
+  offset: 0, 0
+  index: -1
+shadow02
+  rotate: false
+  xy: 2, 34
+  size: 234, 92
+  orig: 234, 92
+  offset: 0, 0
+  index: -1
+shadow03
+  rotate: false
+  xy: 2, 5
+  size: 70, 27
+  orig: 70, 27
+  offset: 0, 0
+  index: -1
+shadow04
+  rotate: false
+  xy: 1309, 76
+  size: 127, 50
+  orig: 127, 50
+  offset: 0, 0
+  index: -1
+shugan
+  rotate: true
+  xy: 828, 39
+  size: 87, 132
+  orig: 87, 132
+  offset: 0, 0
+  index: -1
+tong
+  rotate: false
+  xy: 462, 9
+  size: 69, 53
+  orig: 69, 53
+  offset: 0, 0
+  index: -1
+treeShadow
+  rotate: false
+  xy: 377, 64
+  size: 163, 62
+  orig: 163, 62
+  offset: 0, 0
+  index: -1
+yezi
+  rotate: false
+  xy: 377, 2
+  size: 83, 60
+  orig: 83, 60
+  offset: 0, 0
+  index: -1
+yezi01
+  rotate: false
+  xy: 542, 50
+  size: 143, 76
+  orig: 143, 76
+  offset: 0, 0
+  index: -1
+yezi02
+  rotate: true
+  xy: 1084, 34
+  size: 92, 119
+  orig: 92, 119
+  offset: 0, 0
+  index: -1
+yezi03
+  rotate: false
+  xy: 238, 31
+  size: 137, 95
+  orig: 137, 95
+  offset: 0, 0
+  index: -1
+yezi04
+  rotate: false
+  xy: 962, 16
+  size: 120, 110
+  orig: 120, 110
+  offset: 0, 0
+  index: -1
+yezi05
+  rotate: false
+  xy: 687, 42
+  size: 139, 84
+  orig: 139, 84
+  offset: 0, 0
+  index: -1

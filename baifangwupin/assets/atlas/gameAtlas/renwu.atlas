@@ -1,0 +1,160 @@
+
+renwu.png
+size: 621,303
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 4
+  size: 297, 297
+  orig: 297, 297
+  offset: 0, 0
+  index: -1
+eyebrow_l
+  rotate: false
+  xy: 571, 71
+  size: 48, 33
+  orig: 48, 33
+  offset: 0, 0
+  index: -1
+eyebrow_r
+  rotate: false
+  xy: 525, 20
+  size: 47, 34
+  orig: 47, 34
+  offset: 0, 0
+  index: -1
+liandan_1
+  rotate: true
+  xy: 486, 86
+  size: 35, 21
+  orig: 35, 21
+  offset: 0, 0
+  index: -1
+liandan_2
+  rotate: false
+  xy: 574, 2
+  size: 35, 20
+  orig: 35, 20
+  offset: 0, 0
+  index: -1
+mouse1
+  rotate: true
+  xy: 301, 18
+  size: 123, 79
+  orig: 123, 79
+  offset: 0, 0
+  index: -1
+mouse_smile2
+  rotate: true
+  xy: 448, 191
+  size: 71, 30
+  orig: 71, 30
+  offset: 0, 0
+  index: -1
+mouse_smile3
+  rotate: true
+  xy: 448, 85
+  size: 95, 36
+  orig: 95, 36
+  offset: 0, 0
+  index: -1
+u_arm01
+  rotate: false
+  xy: 589, 153
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+u_arm02
+  rotate: false
+  xy: 589, 124
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+u_arm03
+  rotate: false
+  xy: 301, 143
+  size: 96, 119
+  orig: 96, 119
+  offset: 0, 0
+  index: -1
+u_arm04
+  rotate: false
+  xy: 512, 182
+  size: 107, 119
+  orig: 107, 119
+  offset: 0, 0
+  index: -1
+u_eye1
+  rotate: true
+  xy: 382, 8
+  size: 44, 48
+  orig: 44, 48
+  offset: 0, 0
+  index: -1
+u_eye2
+  rotate: false
+  xy: 525, 56
+  size: 44, 48
+  orig: 44, 48
+  offset: 0, 0
+  index: -1
+u_eye3
+  rotate: true
+  xy: 480, 217
+  size: 45, 29
+  orig: 45, 29
+  offset: 0, 0
+  index: -1
+u_eye4
+  rotate: true
+  xy: 574, 24
+  size: 45, 29
+  orig: 45, 29
+  offset: 0, 0
+  index: -1
+u_eye5
+  rotate: true
+  xy: 486, 123
+  size: 45, 22
+  orig: 45, 22
+  offset: 0, 0
+  index: -1
+u_eye6
+  rotate: true
+  xy: 486, 170
+  size: 45, 24
+  orig: 45, 24
+  offset: 0, 0
+  index: -1
+yanbai_1
+  rotate: false
+  xy: 448, 9
+  size: 75, 74
+  orig: 75, 74
+  offset: 0, 0
+  index: -1
+yanbai_2
+  rotate: false
+  xy: 512, 106
+  size: 75, 74
+  orig: 75, 74
+  offset: 0, 0
+  index: -1
+youtui
+  rotate: true
+  xy: 301, 264
+  size: 37, 209
+  orig: 37, 209
+  offset: 0, 0
+  index: -1
+zuotui
+  rotate: false
+  xy: 399, 54
+  size: 47, 208
+  orig: 47, 208
+  offset: 0, 0
+  index: -1

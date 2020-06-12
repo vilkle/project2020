@@ -1,0 +1,83 @@
+
+boy.png
+size: 444,171
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+boy_arm_l
+  rotate: false
+  xy: 174, 2
+  size: 95, 68
+  orig: 95, 68
+  offset: 0, 0
+  index: -1
+boy_arm_r
+  rotate: true
+  xy: 313, 18
+  size: 46, 102
+  orig: 46, 102
+  offset: 0, 0
+  index: -1
+boy_body
+  rotate: false
+  xy: 174, 72
+  size: 87, 97
+  orig: 87, 97
+  offset: 0, 0
+  index: -1
+boy_ear_l
+  rotate: false
+  xy: 271, 45
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+boy_ear_r
+  rotate: false
+  xy: 271, 3
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+boy_eye
+  rotate: true
+  xy: 424, 114
+  size: 55, 18
+  orig: 55, 18
+  offset: 0, 0
+  index: -1
+boy_eyebrows
+  rotate: false
+  xy: 263, 87
+  size: 65, 11
+  orig: 65, 11
+  offset: 0, 0
+  index: -1
+boy_head
+  rotate: true
+  xy: 2, 2
+  size: 167, 170
+  orig: 167, 170
+  offset: 0, 0
+  index: -1
+boy_leg_l
+  rotate: true
+  xy: 364, 66
+  size: 103, 58
+  orig: 103, 58
+  offset: 0, 0
+  index: -1
+boy_leg_r
+  rotate: false
+  xy: 263, 100
+  size: 99, 69
+  orig: 99, 69
+  offset: 0, 0
+  index: -1
+boy_mouth
+  rotate: true
+  xy: 417, 27
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1

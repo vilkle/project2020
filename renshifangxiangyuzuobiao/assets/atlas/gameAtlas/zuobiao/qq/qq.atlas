@@ -1,0 +1,90 @@
+
+qq.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+qq_body
+  rotate: false
+  xy: 2, 109
+  size: 160, 145
+  orig: 160, 145
+  offset: 0, 0
+  index: -1
+qq_eye01
+  rotate: false
+  xy: 115, 94
+  size: 37, 13
+  orig: 37, 13
+  offset: 0, 0
+  index: -1
+qq_eye01_N
+  rotate: false
+  xy: 56, 51
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+qq_eye02
+  rotate: false
+  xy: 2, 2
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+qq_eye02_N
+  rotate: false
+  xy: 172, 223
+  size: 36, 31
+  orig: 36, 31
+  offset: 0, 0
+  index: -1
+qq_meimao01
+  rotate: false
+  xy: 56, 35
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+qq_meimao02
+  rotate: false
+  xy: 92, 69
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+qq_mouth
+  rotate: false
+  xy: 56, 84
+  size: 57, 23
+  orig: 57, 23
+  offset: 0, 0
+  index: -1
+qq_mouth_N
+  rotate: false
+  xy: 210, 234
+  size: 30, 20
+  orig: 30, 20
+  offset: 0, 0
+  index: -1
+qq_saih_N
+  rotate: true
+  xy: 164, 159
+  size: 95, 6
+  orig: 95, 6
+  offset: 0, 0
+  index: -1
+yanl
+  rotate: false
+  xy: 2, 16
+  size: 52, 91
+  orig: 52, 91
+  offset: 0, 0
+  index: -1
+yanlei_gg
+  rotate: false
+  xy: 172, 190
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
