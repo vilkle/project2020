@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        383.64925387650635,
+        561.1844616523163,
         0,
         0,
         0,
@@ -282,7 +282,7 @@
       "height": 1152
     },
     "_fitWidth": true,
-    "_fitHeight": false,
+    "_fitHeight": true,
     "_id": "ea74M/Ku5NubbBBQaVntDi"
   },
   {
@@ -661,7 +661,7 @@
       }
     ],
     "paused": false,
-    "defaultSkin": "",
+    "defaultSkin": "default",
     "defaultAnimation": "",
     "_preCacheMode": 0,
     "_cacheMode": 0,
@@ -950,7 +950,7 @@
       }
     ],
     "paused": false,
-    "defaultSkin": "",
+    "defaultSkin": "default",
     "defaultAnimation": "airship",
     "_preCacheMode": 0,
     "_cacheMode": 0,

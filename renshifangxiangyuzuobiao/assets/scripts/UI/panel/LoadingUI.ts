@@ -7,6 +7,8 @@ import { NetWork } from "../../Http/NetWork";
 import DataReporting from "../../Data/DataReporting";
 import { TimeManager } from "../../Manager/TimeManager";
 import GameMsg from "../../Data/GameMsg";
+import { ListenerManager } from "../../Manager/ListenerManager";
+import { ListenerType } from "../../Data/ListenerType";
 
 const { ccclass, property } = cc._decorator;
 
@@ -25,8 +27,9 @@ export class LoadingUI extends BaseUI {
     private isLoadStart = false;
 
     onLoad() {
+        ListenerManager.getInstance().add(ListenerType.CloseSceneLoading, this, this.closeLoading)
+        
         NetWork.getInstance().GetRequest();
-
 
         let onProgress = (completedCount: number, totalCount: number, item: any) => {
             if (!this.isLoadStart) {
@@ -58,7 +61,10 @@ export class LoadingUI extends BaseUI {
 
             // DataReporting.getInstance().dispatchEvent('load end');
             // DataReporting.getInstance().dispatchEvent('start');
-            this.node.active = false;
+            //this.node.active = false;
         }, onProgress);
+    }
+    closeLoading() {
+        this.node.active = false
     }
 }

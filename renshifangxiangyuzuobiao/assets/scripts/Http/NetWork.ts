@@ -1,6 +1,8 @@
 import { ConstValue } from "../Data/ConstValue";
 import { UIManager } from "../Manager/UIManager";
 import ErrorPanel from "../UI/panel/ErrorPanel";
+import { ListenerManager } from "../Manager/ListenerManager";
+import { ListenerType } from "../Data/ListenerType";
 export class NetWork {
     private static instance: NetWork;
 
@@ -65,6 +67,7 @@ export class NetWork {
         } else {
             //新课堂学生端  判断所有参数
             if (!ConstValue.IS_TEACHER && (!NetWork.userId || !NetWork.coursewareId || !NetWork.env || !NetWork.app || !NetWork.channel || !NetWork.browser)) {
+                ListenerManager.getInstance().trigger(ListenerType.CloseSceneLoading)
                 UIManager.getInstance().openUI(ErrorPanel, 1000, () => {
                     (UIManager.getInstance().getUI(ErrorPanel) as ErrorPanel).setPanel(
                         "URL参数错误,请联系客服！",

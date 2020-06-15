@@ -86,11 +86,11 @@ export default class GamePanel extends BaseUI {
          //添加上报result数据
          ReportManager.getInstance().addResult(1)
          ReportManager.getInstance().setQuestionInfo(0, '一起动手，挑战下面的关卡吧！')
+         cc.loader.loadRes("font/FangZhengCuYuan", cc.TTFFont, null)
     }
 
     start() {
         if(ConstValue.IS_TEACHER) {
-            ListenerManager.getInstance().trigger(ListenerType.CloseLoading)
             UIManager.getInstance().openUI(UploadAndReturnPanel, 212);
             this.types = DaAnData.getInstance().types;
             this.head = DaAnData.getInstance().head;
@@ -227,6 +227,13 @@ export default class GamePanel extends BaseUI {
             // }
             this.bubbleEnd()
         })
+       
+        if(ConstValue.IS_TEACHER == true) {
+            ListenerManager.getInstance().trigger(ListenerType.CloseLoading)
+            ListenerManager.getInstance().trigger(ListenerType.OpenGame)
+        }else {
+            ListenerManager.getInstance().trigger(ListenerType.CloseSceneLoading)
+        }
     }
 
     initVegetable() {
@@ -284,32 +291,49 @@ export default class GamePanel extends BaseUI {
             // }
             this.bubbleEnd()
         })
+        if(ConstValue.IS_TEACHER == true) {
+            ListenerManager.getInstance().trigger(ListenerType.CloseLoading)
+            ListenerManager.getInstance().trigger(ListenerType.OpenGame)
+        }else {
+            ListenerManager.getInstance().trigger(ListenerType.CloseSceneLoading)
+        }
     }
 
     initDirection() {
         this.title = this.parentNode.getChildByName('title')
         this.titleLabel = this.title.getChildByName('label').getComponent(cc.Label)
         this.titleLabel.string = this.head
-        this.timeoutId = setTimeout(() => {
-            let len = this.titleLabel.node.width
-            this.title.width = len + 140
-            clearTimeout(this.timeoutId)
-        }, 1);
-        AudioManager.getInstance().playSound('sfx_txopn2',false);
+        // this.timeoutId = setTimeout(() => {
+        //     let len = this.titleLabel.node.width
+        //     this.title.width = len + 140
+        //     clearTimeout(this.timeoutId)
+        // }, 1);
         let left = this.directionNode.getChildByName('leftNode');
         let right = this.directionNode.getChildByName('rightNode');
         left.opacity = 100;
         right.opacity = 0;
         left.setPosition(cc.v2(-1500, 0));
         right.setPosition(cc.v2(1500, 0));
-        let spaw1 = cc.spawn(cc.moveBy(1.9, cc.v2(0,12)), cc.rotateBy(1.9, -5));
-        let spaw2 = cc.spawn(cc.moveBy(2.4, cc.v2(0,-12)), cc.rotateBy(2.4, 5));
-        let seq = cc.sequence(spaw1, spaw2);
-        let loop = cc.repeatForever(seq);
-        this.duckNode.runAction(loop);
-        let seq1 = cc.sequence(cc.spawn(cc.moveBy(1.5, cc.v2(-1500, 0)), cc.fadeIn(1.5)), cc.callFunc(()=>{}));
-        left.runAction(cc.spawn(cc.moveBy(1.5, cc.v2(1500, 0)), cc.fadeIn(1.5)));
-        right.runAction(seq1);
+        this.scheduleOnce(()=>{
+            let len = this.titleLabel.node.width
+            console.log('-------len', len)
+            this.title.width = len + 140
+            if(ConstValue.IS_TEACHER == true) {
+                ListenerManager.getInstance().trigger(ListenerType.CloseLoading)
+                ListenerManager.getInstance().trigger(ListenerType.OpenGame)
+            }else {
+                ListenerManager.getInstance().trigger(ListenerType.CloseSceneLoading)
+            }
+            AudioManager.getInstance().playSound('sfx_txopn2',false);
+            let spaw1 = cc.spawn(cc.moveBy(1.9, cc.v2(0,12)), cc.rotateBy(1.9, -5));
+            let spaw2 = cc.spawn(cc.moveBy(2.4, cc.v2(0,-12)), cc.rotateBy(2.4, 5));
+            let seq = cc.sequence(spaw1, spaw2);
+            let loop = cc.repeatForever(seq);
+            this.duckNode.runAction(loop);
+            let seq1 = cc.sequence(cc.spawn(cc.moveBy(1.5, cc.v2(-1500, 0)), cc.fadeIn(1.5)), cc.callFunc(()=>{}));
+            left.runAction(cc.spawn(cc.moveBy(1.5, cc.v2(1500, 0)), cc.fadeIn(1.5)));
+            right.runAction(seq1);
+        }, 0.2)
     }
 
 

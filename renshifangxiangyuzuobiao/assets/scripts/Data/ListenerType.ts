@@ -13,4 +13,6 @@ export class ListenerType {
     public static readonly OnClickReturn = "OnClickReturn";
     public static readonly OnClicktijiao = "OnClicktijiao";
     public static readonly CloseLoading = "CloseLoading";
+    public static readonly CloseSceneLoading = "CloseSceneLoading";
+    public static readonly OpenGame = "OpenGame";
 }

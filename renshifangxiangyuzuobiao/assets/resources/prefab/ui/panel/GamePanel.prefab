@@ -5284,8 +5284,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "三十个字的题干三十个字的题干三十个字的题干三十个字的题干三十",
-    "_N$string": "三十个字的题干三十个字的题干三十个字的题干三十个字的题干三十",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -14608,8 +14608,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "三十个字的题干三十个字的题干三十个字的题干",
-    "_N$string": "三十个字的题干三十个字的题干三十个字的题干",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -28958,7 +28958,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1350,
+      "width": 1300,
       "height": 124
     },
     "_anchorPoint": {
@@ -28970,7 +28970,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -102.167,
+        0,
         488.651,
         0,
         0,
@@ -29022,7 +29022,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1240,
+      "width": 0,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -29073,8 +29073,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "添加一个三十字内的题干添加一个三十字内的题干添加一个三十字内的",
-    "_N$string": "添加一个三十字内的题干添加一个三十字内的题干添加一个三十字内的",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -29531,7 +29531,7 @@
     "_spriteFrame": null,
     "_type": 0,
     "_segments": 64,
-    "_N$alphaThreshold": 0,
+    "_N$alphaThreshold": 0.1,
     "_N$inverted": false,
     "_id": ""
   },

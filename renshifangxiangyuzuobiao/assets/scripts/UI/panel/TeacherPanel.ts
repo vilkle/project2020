@@ -28,6 +28,8 @@ export default class TeacherPanel extends BaseUI {
     private touchEnable: boolean = true;
     onLoad () {
         cc.loader.loadRes('atlas/loading_01', sp.SkeletonData, null)
+        ListenerManager.getInstance().trigger(ListenerType.CloseSceneLoading)
+        ListenerManager.getInstance().add(ListenerType.OpenGame, this, this.openGame)
     }
 
     start() {
@@ -72,9 +74,16 @@ export default class TeacherPanel extends BaseUI {
             return
         }
         this.loadingNode.active = true
-        UIManager.getInstance().showUI(GamePanel,() => {
+        UIManager.getInstance().openUI(GamePanel, 0,() => {
+            UIManager.getInstance().getUI(GamePanel).node.zIndex = 0
+            UIManager.getInstance().getUI(TeacherPanel).node.zIndex = 1
             ListenerManager.getInstance().trigger(ListenerType.OnEditStateSwitching, {state: 1}); 
         });
+    }
+
+    openGame() {
+        UIManager.getInstance().getUI(GamePanel).node.zIndex = 1
+        UIManager.getInstance().getUI(TeacherPanel).node.zIndex = 0
     }
 
     getNet() {
