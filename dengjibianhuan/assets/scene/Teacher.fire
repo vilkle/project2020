@@ -183,7 +183,7 @@
       "array": [
         0,
         0,
-        532.9168512069149,
+        258.0755703277627,
         0,
         0,
         0,
@@ -421,7 +421,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "录入题目信息",
     "_N$string": "录入题目信息",
     "_fontSize": 30,
@@ -515,7 +516,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "检测题目",
     "_N$string": "检测题目",
     "_fontSize": 30,
@@ -1236,7 +1238,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "0%",
     "_N$string": "0%",
     "_fontSize": 30,

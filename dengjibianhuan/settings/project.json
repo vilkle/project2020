@@ -35,7 +35,8 @@
     "TypeScript Polyfill",
     "3D Physics/cannon.js",
     "3D Physics/Builtin",
-    "3D Particle"
+    "3D Particle",
+    "SafeArea"
   ],
   "facebook": {
     "appID": "",
@@ -61,5 +62,7 @@
   "start-scene": "a75e94dc-05bd-44a5-bdab-af7a2bed76a7",
   "use-customize-simulator": true,
   "use-project-simulator-setting": false,
-  "migrate-history": []
+  "migrate-history": [
+    "cloud-function"
+  ]
 }

@@ -85,7 +85,7 @@ export default class TeacherPanel extends BaseUI {
     start() {
         this.type = 1
         this.qType = 1
-        this.getNet();
+        //this.getNet();
     }
 
     closeLoading() {
